@@ -17,7 +17,7 @@ const emit = defineEmits(['close'])
 const createClient = async () => {
   let object = {
     name :client.name,
-    phone: client.name,
+    phone: client.phone,
 
     birthday: client.birthday,
   }
