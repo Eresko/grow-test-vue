@@ -2,6 +2,8 @@
 import { ref,watchEffect,onMounted,reactive,computed } from 'vue'
 import { debouncedWatch } from '@vueuse/core'
 import axios from 'axios'
+import Inputmask from "inputmask";
+import MaskedInput from 'vue-text-mask';
 const clients = ref([]);
 import { Notyf } from 'notyf'
 import 'notyf/notyf.min.css';
@@ -38,6 +40,7 @@ watchEffect(() => {
 onMounted( async () => {
   await getClients();
 })
+
 </script>
 
 

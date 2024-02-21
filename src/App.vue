@@ -4,6 +4,7 @@ import CreateDispatch from "./components/CreateDispatch.vue";
 import Dashboard from "./components/Dashboard.vue";
 import Clients from "./components/Clients.vue";
 import Statistics from "./components/Statistics.vue";
+import CreateClient from "./components/CreateClient.vue";
 const type = ref(1);
 const update = () => {
   window.location.href="/"
@@ -17,15 +18,18 @@ const create = () => {
 const statistics = () => {
   type.value =3;
 }
-
+const createClient = () => {
+  type.value =4;
+}
 </script>
 
 <template>
   <div class="main">
-    <Dashboard @create="create" @clients="clients" @statistics="statistics"/>
+    <Dashboard @create="create" @clients="clients" @statistics="statistics" @create-client="createClient"/>
     <CreateDispatch @close="clients" v-if="type==2"/>
     <Clients v-if="type==1"/>
     <Statistics v-if="type==3"/>
+    <CreateClient v-if="type==4" @close="clients"/>
   </div>
 </template>
 
